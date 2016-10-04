@@ -1,0 +1,16 @@
+name: ${project.name}
+main: de.themoep.whatplugin.WhatPlugin
+version: '${minecraft.plugin.version}'
+description: ${project.description}
+authors: [Phoenix616]
+commands:
+   whatplugin:
+      aliases: [wp]
+      description: Find out the plugin and permission node of a command
+      usage: /<command> <commandname>
+      permission: whatplugin.command
+      permission-message: You don't have the permission <permission>
+permissions:
+   whatplugin.command:
+      description: Gives permission to the plugin command
+      default: op
