@@ -5,7 +5,7 @@ description: ${project.description}
 authors: [Phoenix616]
 commands:
    whatplugin:
-      aliases: [wp]
+      aliases: [wp,what,wat,which]
       description: Find out the plugin and permission node of a command
       usage: /<command> <commandname>
       permission: whatplugin.command
