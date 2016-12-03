@@ -36,7 +36,7 @@ public class WhatPlugin extends JavaPlugin {
                 sender.sendMessage(ChatColor.GREEN + "Permission: " + ChatColor.YELLOW + (command.getPermission() != null ? command.getPermission() : "None? That's strange!"));
                 sender.sendMessage(ChatColor.GREEN + "Aliases: " + ChatColor.YELLOW + (command.getAliases().size() > 0 ? (Arrays.toString(command.getAliases().toArray())) : "None"));
             } else {
-                sender.sendMessage(ChatColor.RED + "No plugin command with the name " + ChatColor.YELLOW + commandStr + ChatColor.RED + " found? Maybe it is a Vanilla comamnd?");
+                sender.sendMessage(ChatColor.RED + "No plugin command with the name " + ChatColor.YELLOW + commandStr + ChatColor.RED + " found? Maybe it is a Vanilla command?");
             }
             return true;
         }
