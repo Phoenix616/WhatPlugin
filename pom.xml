@@ -6,7 +6,7 @@
 
     <groupId>de.themoep</groupId>
     <artifactId>whatplugin</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <description>What plugin is a command from? What is its permission, aliases and description? Find out with this cool Bukkit plugin!</description>
     <name>WhatPlugin</name>
 
@@ -19,16 +19,17 @@
 
     <repositories>
         <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+            <id>papermc</id>
+            <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
+            <groupId>com.destroystokyo.paper</groupId>
+            <artifactId>paper-api</artifactId>
             <version>1.13.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

@@ -45,16 +45,17 @@ public class WhatPlugin extends JavaPlugin {
             }
 
             // Try to get plugin command
-            PluginCommand command = getServer().getPluginCommand(commandStr);
+            Command command = getServer().getCommandMap().getCommand(commandStr);
             if (command != null) {
-                sender.sendMessage(ChatColor.GREEN + "Found command " + ChatColor.YELLOW + command.getName() + ChatColor.GREEN + " in plugin " + ChatColor.YELLOW + command.getPlugin().getName());
-                sender.sendMessage(ChatColor.GREEN + "Description: " + ChatColor.YELLOW + (command.getDescription() != null ? command.getDescription() : "None? What does it do???"));
+                sender.sendMessage(ChatColor.GREEN + "Found command " + ChatColor.YELLOW + command.getName() + ChatColor.GREEN + " in "
+                        + (command instanceof PluginCommand ? ("plugin " + ChatColor.YELLOW + ((PluginCommand) command).getPlugin().getName()) : "server"));
+                sender.sendMessage(ChatColor.GREEN + "Description: " + ChatColor.YELLOW + command.getDescription());
                 sender.sendMessage(ChatColor.GREEN + "Permission: " + ChatColor.YELLOW + (command.getPermission() != null ? command.getPermission() : "None? That's strange!"));
                 sender.sendMessage(ChatColor.GREEN + "Aliases: " + ChatColor.YELLOW + (command.getAliases().size() > 0 ? (Arrays.toString(command.getAliases().toArray())) : "None"));
                 return true;
             }
 
-            sender.sendMessage(ChatColor.RED + "No plugin command with the name " + ChatColor.YELLOW + commandStr + ChatColor.RED + " found? Maybe it is a Vanilla command?");
+            sender.sendMessage(ChatColor.RED + "No plugin or server command with the name " + ChatColor.YELLOW + commandStr + ChatColor.RED + " found?");
             return true;
         }
         return false;
